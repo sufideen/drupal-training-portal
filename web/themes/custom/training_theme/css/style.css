@@ -1,0 +1,83 @@
+/* =============================================================
+   Drupal Training Portal — Custom Theme
+   Based on Bootstrap Barrio
+   ============================================================= */
+
+:root {
+  --brand-blue:   #1a3c6b;
+  --brand-orange: #e87722;
+  --text-dark:    #2c2c2c;
+  --bg-light:     #f5f7fa;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Header */
+.region-header {
+  background: var(--brand-blue);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.region-header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  font-weight: 500;
+}
+
+.region-header a:hover {
+  color: var(--brand-orange);
+}
+
+/* Hero */
+.region-hero {
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-orange) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+}
+
+.btn-primary:hover {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+/* Footer */
+.region-footer {
+  background: var(--brand-blue);
+  color: #ccc;
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.region-footer a {
+  color: #ccc;
+  text-decoration: none;
+}

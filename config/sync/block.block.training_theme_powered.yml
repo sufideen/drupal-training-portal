@@ -1,0 +1,22 @@
+uuid: 819d3249-29ee-4881-8ece-cbc99acd099e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - training_theme
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: training_theme_powered
+theme: training_theme
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

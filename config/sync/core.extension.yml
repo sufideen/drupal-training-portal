@@ -48,4 +48,5 @@ theme:
   claro: 0
   bootstrap_barrio: 0
   gin: 0
+  training_theme: 0
 profile: standard

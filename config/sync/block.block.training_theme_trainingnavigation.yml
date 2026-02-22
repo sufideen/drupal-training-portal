@@ -1,0 +1,25 @@
+uuid: 8ebf78a0-24cf-4b84-a46c-3b9563024b4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.training-navigation
+  module:
+    - system
+  theme:
+    - training_theme
+id: training_theme_trainingnavigation
+theme: training_theme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:training-navigation'
+settings:
+  id: 'system_menu_block:training-navigation'
+  label: 'Training Navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

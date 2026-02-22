@@ -1,0 +1,68 @@
+name: Drupal Sync Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Composer and Config
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, curl, zip, gd, intl, bcmath, opcache, mysql
+          coverage: none
+
+      - name: Validate composer.json
+        run: composer validate --strict
+        working-directory: .
+        continue-on-error: true
+
+      - name: Check composer.lock is up to date
+        run: composer install --dry-run --no-interaction
+        continue-on-error: true
+
+      - name: Check for config/sync directory
+        run: |
+          if [ -d "config/sync" ] && [ "$(ls -A config/sync)" ]; then
+            echo "Config sync directory exists with files — OK"
+          else
+            echo "WARNING: config/sync is empty or missing"
+          fi
+
+      - name: Lint YAML config files
+        run: |
+          find config/sync -name "*.yml" | head -5 | while read f; do
+            python3 -c "import yaml, sys; yaml.safe_load(open('$f'))" && echo "OK: $f"
+          done
+        continue-on-error: true
+
+      - name: Check .gitignore excludes sensitive files
+        run: |
+          MISSING=""
+          for pattern in "vendor/" "web/sites/default/files/" ".env" "*.sql"; do
+            grep -qF "$pattern" .gitignore || MISSING="$MISSING $pattern"
+          done
+          if [ -n "$MISSING" ]; then
+            echo "WARNING: These should be in .gitignore:$MISSING"
+          else
+            echo ".gitignore looks correct — OK"
+          fi
+
+      - name: Confirm settings.php is not committed
+        run: |
+          if git ls-files --error-unmatch web/sites/default/settings.php 2>/dev/null; then
+            echo "ERROR: settings.php is tracked by Git — remove it immediately!"
+            exit 1
+          else
+            echo "settings.php is not tracked — OK"
+          fi

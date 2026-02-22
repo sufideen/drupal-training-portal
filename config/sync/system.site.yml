@@ -3,8 +3,8 @@ _core:
 langcode: en
 uuid: 9d277156-3570-428f-ab25-d487bed812d1
 name: 'Drupal Training Portal'
-mail: admin@example.com
-slogan: ''
+mail: support@ict-cloud.solutions
+slogan: 'Training & Development Portal'
 page:
   403: ''
   404: ''

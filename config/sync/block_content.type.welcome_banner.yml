@@ -1,0 +1,8 @@
+uuid: 092889e4-c97d-4f47-8c8a-c50ef145b9fa
+langcode: en
+status: true
+dependencies: {  }
+id: welcome_banner
+label: 'Welcome Banner'
+revision: false
+description: 'Welcome to the Drupal Training Portal — your step-by-step guide to mastering Drupal'

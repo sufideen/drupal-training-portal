@@ -1,0 +1,25 @@
+uuid: 9c093a6e-fe2c-4782-a277-10c4d25353b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.training-navigation
+  module:
+    - system
+  theme:
+    - olivero
+id: olivero_trainingnavigation
+theme: olivero
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:training-navigation'
+settings:
+  id: 'system_menu_block:training-navigation'
+  label: 'Training Navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

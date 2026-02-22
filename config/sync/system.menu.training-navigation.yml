@@ -1,0 +1,8 @@
+uuid: 9449e829-5ae5-4bb3-b839-82735682e1f2
+langcode: en
+status: true
+dependencies: {  }
+id: training-navigation
+label: 'Training Navigation'
+description: ''
+locked: false

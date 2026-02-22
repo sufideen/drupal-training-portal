@@ -1,0 +1,30 @@
+uuid: 37c07df3-a6d7-4690-b3d2-cc25f2a23095
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_list
+field_name: field_list
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: beginner_beginner|beginner
+      label: Beginner
+    -
+      value: intermediate_intermediate
+      label: 'Intermediate, Intermediate'
+    -
+      value: advanced_advanced|advanced
+      label: Advanced
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
